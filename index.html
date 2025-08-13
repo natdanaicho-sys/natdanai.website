@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>เว็บไซต์ของ [ณัฐดนัย ชมเชี่ยวชาญ]</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+body {
+            background-color: #74a0c9;
+            font-family: Itim, sans-serif;
+        }
+        h1 {
+            color: #000000;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            /* กำหนดความกว้างของรูปภาพ */
+            height: 200px;
+            /* กำหนดความสูงของรูปภาพ */
+            border: 16px solid #63e463;
+            /* เพิ่มขอบสีฟ้าทึบขนาด 5px */
+            border-radius: 50%;
+            /* ทำให้รูปภาพเป็นวงกลม */
+            box-shadow: 0 4px 8px rgba(1, 6, 8, 98.2);
+            /* เพิ่มเงาให้รูปภาพ */
+            display: block;
+            /* จัดให้รูปภาพอยู่คนละบรรทัดกับข้อความ */
+            margin: 30px auto;
+            /* จัดให้อยู่กึ่งกลางหน้าเว็บ */
+        }
+
+        table {
+            width: 85%;
+            /* กำหนดความกว้างของตาราง */
+            border-collapse: collapse;
+            /* รวมเส้นขอบของเซลล์ให้เป็นเส้นเดียว */
+            margin: 20px auto;
+            /* จัดให้อยู่กึ่งกลางหน้าเว็บ */
+            background-color: #bff3f5;
+        }
+        th, td {
+            border: 5px solid #555555;
+            /* เพิ่มเส้นขอบเซลล์ */
+            padding: 15px;
+            /* เพิ่มระยะห่างภายในเซลล์ */
+        }
+        th {
+            background-color: #3498db;
+            /* สีพื้นหลังของหัวตาราง */
+            color: rgb(0, 0, 0);
+            /* สีตัวอักษรของหัวตาราง */
+        }
+        tr:nth-child(even) {
+            background-color: #aeee83;
+            /* สลับสีพื้นหลังของแถว เพื่อให้อ่านง่ายขึ้น */
+        }
+    </style>
+</head>
+<body>
+    <h1>หน้าแนะนำตัวของฉัน</h1>
+
+    <img src="รูปคนหล่อ.jpg" alt="รูปภาพของฉัน" width="200">
+    <p>สวัสดีค้าบ ยินดีต้อนรับเข้าสู่เว็ปไซต์ของผม</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">ข้อมูลส่วนตัว</th>
+            </tr>
+        </thead>
+        <tbody>
+ 			<tr>
+                <td>รหัสประจำตัว</td>
+                <td>[683380655-6]</td>
+            </tr>
+            <tr>
+                <td>ชื่อ</td>
+                <td>ใส่ชื่อ ณัฐดนัย ชมเชี่ยวชาญ</td>
+            </tr>
+            <tr>
+                <td>อีเมล</td>
+                <td>[natdanai.cho@kkumail.com]</td>
+            </tr>
+            <tr>
+                <td>ความสนใจ</td>
+                <td>[วิ่ง,นอน,ต่อยมวย]</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+  <div class="rbox">
+        <button onclick="start_random()">กดเพื่อสุ่มตัวเลข 6 หลัก</button>
+        <div id="num">---</div>
+    </div>
+    <script>
+        let n = 0;
+        let numElem = document.getElementById("num");
+
+        function start_random(){
+            if(n>0) return;
+            n = 50;
+            next_number();
+        }
+        function next_number(){
+            var r =  Math.round(Math.random()*999999)+"";
+            numElem.innerText = r.padStart(6,'0');
+            n--;
+            if(n>0){
+               setTimeout(next_number,150-n); 
+            }
+        }
+    </script>
